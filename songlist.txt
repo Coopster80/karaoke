@@ -48,25 +48,25 @@ Brandon's list:
 ==============================
 Edward's list:
 1.
-  Title:
-  Artist:
-  Contributer(s):
+  Title: Sure and Certain
+  Artist: Jimmy Eat World
+  Contributer(s): Jim Adkins, Rick Burch, Zach Lind, Tom Linton
 2.
-  Title:
-  Artist:
-  Contributer(s):
+  Title: No Problem
+  Artist: Chance the Rapper, Lil Wayne, 2 Chainz
+  Contributer(s): Chancelor Bennett, Dwayne Carter Jr., Tauheed Epps
 3.
-  Title:
-  Artist:
-  Contributer(s):
+  Title: False Alarm
+  Artist: The Weeknd
+  Contributer(s): Abel Tesfaye, Martin McKinney
 4.
-  Title:
-  Artist:
-  Contributer(s):
+  Title: Such Great Heights
+  Artist: Postal Service
+  Contributer(s): Ben Gibbard, Jimmy Tamborello
 5.
-  Title:
-  Artist:
-  Contributer(s):
+  Title: Crash
+  Artist: Usher
+  Contributer(s): Usher Raymond IV, Lee Stashenko, Carlos St. John, Corey Williams
 =============================
 
 
