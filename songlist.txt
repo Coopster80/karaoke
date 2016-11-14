@@ -24,9 +24,10 @@ Devins list:
 ==============================
 Brandon's list:
 1.
-  Title:
-  Artist:
-  Contributer(s):
+  Title:Come Together 
+  Artist:The Beatles 
+  Contributer(s): Writers: John Lenon, Paul McCartney 
+                  Producer: George Martin
 2.
   Title:
   Artist:
