@@ -44,5 +44,28 @@ Brandon's list:
   Artist:
   Contributer(s):
 =============================
+==============================
+Edward's list:
+1.
+  Title:
+  Artist:
+  Contributer(s):
+2.
+  Title:
+  Artist:
+  Contributer(s):
+3.
+  Title:
+  Artist:
+  Contributer(s):
+4.
+  Title:
+  Artist:
+  Contributer(s):
+5.
+  Title:
+  Artist:
+  Contributer(s):
+=============================
 
 
