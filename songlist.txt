@@ -1,5 +1,5 @@
 ==============================
-Devins list:
+Devin's list:
 1.
   Title:
   Artist:
@@ -20,14 +20,13 @@ Devins list:
   Title:
   Artist:
   Contributer(s):
-=============================
+==============================
 ==============================
 Brandon's list:
 1.
-  Title:Come Together 
-  Artist:The Beatles 
-  Contributer(s): Writers: John Lenon, Paul McCartney 
-                  Producer: George Martin
+  Title: Come Together 
+  Artist: The Beatles 
+  Contributer(s): John Lenon(Writer), Paul McCartney(Writer) George Martin(Producer)
 2.
   Title:
   Artist:
@@ -44,7 +43,7 @@ Brandon's list:
   Title:
   Artist:
   Contributer(s):
-=============================
+==============================
 ==============================
 Edward's list:
 1.
@@ -67,6 +66,27 @@ Edward's list:
   Title: Crash
   Artist: Usher
   Contributer(s): Usher Raymond IV, Lee Stashenko, Carlos St. John, Corey Williams
-=============================
-
-
+==============================
+==============================
+Nolan's List:
+1.
+  Title: More Than A Feeling
+  Artist: Boston
+  Contributer(s): John Boylan(Production), Paul Ahern(Direction), Charles McKenzie(Direction)
+2.
+  Title: Peace of Mind
+  Artist: Boston
+  Contributer(s): John Boylan(Production), Paul Ahern(Direction), Steve Hodge(Mixing)
+3.
+  Title: Everglow
+  Artist: Coldplay
+  Contributer(s): Gwyneth Paltrow(Vocals)
+4.
+  Title: Hymn for the Weekend
+  Artist: Coldplay
+  Contributer(s): Beyonce(Vocals), Regiment Horns(Brass)
+5.
+  Title: Fun
+  Artist: Coldplay
+  Contributer(s): Tove Lo(Vocals)
+==============================
