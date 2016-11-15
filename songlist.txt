@@ -43,21 +43,21 @@ Brandon's list:
   Artist: The Beatles 
   Contributer(s): John Lenon(Writer), Paul McCartney(Writer) George Martin(Producer)
 2.
-  Title:
-  Artist:
-  Contributer(s):
+  Title: Come Together
+  Artist: Aerosmith
+  Contributer(s): John Lenon(Writer), Paul McCartney(Writer)
 3.
-  Title:
-  Artist:
-  Contributer(s):
+  Title: Tribute
+  Artist: Tenacious D
+  Contributer(s): Jack Black(Writer), Kyle Gass(Writer), The Dust Brothers(Producer)
 4.
-  Title:
-  Artist:
-  Contributer(s):
+  Title: Bohemian Rhapsody
+  Artist: Queen
+  Contributer(s): Freddie Mercury(Writer), Roy Thomas Baker(Producer)
 5.
-  Title:
-  Artist:
-  Contributer(s):
+  Title: What I've Done
+  Artist: Linkin Park
+  Contributer(s): Rick Rubin(Producer), Mike Shinoda(Producer)
 ==============================
 ==============================
 Edward's list:
