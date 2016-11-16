@@ -14,3 +14,6 @@
 3. Create and run an SQL script which will create the tables from the relational schema
 4. Think up some sample data and insert it into the SQL tables
 5. Implement the web application using PHP
+
+### Links
+http://students.cs.niu.edu/~z1701294/listMovies.php
