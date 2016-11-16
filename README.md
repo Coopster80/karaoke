@@ -16,5 +16,5 @@
 5. Implement the web application using PHP
 
 ### Links
-1. http://students.cs.niu.edu/~z1701294/listMovies.php
+1. http://students.cs.niu.edu/~z1701294/Movie%20Assignment/listMovies.php
 2. http://students.cs.niu.edu/~z1737028/karaoke/home.php
