@@ -89,3 +89,21 @@ INSERT INTO Contributor(name) VALUES
 	("Beyonce"),
 	("Regiment Horns"),
 	("Tove Lo");
+INSERT INTO Artist(name) VALUES
+	("Sir Mix-A-Lot"),
+	("Vamilla Ice"),
+	("Jimmy Buffet"),
+	("Bon Jovi"),
+	("Cyndi Lauper"),
+	("The Beatles"),
+	("Aerosmith"),
+	("Tenacious D"),
+	("Queen"),
+	("Linkin Park"),
+	("Jimmy Eat World"),
+	("Chance the Rapper, Lil Wayne, 2 Chainz"),
+	("The Weeknd"),
+	("Postal Service"),
+	("Usher"),
+	("Boston"),
+	("Coldplay");
