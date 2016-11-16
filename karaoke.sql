@@ -127,3 +127,30 @@ INSERT INTO Title(text) VALUES
 	("Everglow"),
 	("Hymn for the Weekend"),
 	("Fun");
+/* Typed by Edward */
+INSERT INTO File(artistID,titleID) VALUES
+	(1,1),
+	(2,2),
+	(3,3),
+	(4,4),
+	(5,5),
+	(6,6),
+	(7,6),
+	(8,7),
+	(9,8),
+	(10,9),
+	(11,10),
+	(12,11),
+	(13,12),
+	(14,13),
+	(15,14),
+	(16,15),
+	(16,16),
+	(17,17),
+	(17,18),
+	(17,19);
+/* 
+Type this in SQL to display the Title and Artist
+SELECT text, name FROM File F, Artist A, Title T where F.artistID = A.artistID AND F.titleID = T.titleID;
+If anyone else can check the data to make sure that it is correct, it'd be appreciated.  
+*/	
