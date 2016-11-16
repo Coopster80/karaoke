@@ -107,3 +107,23 @@ INSERT INTO Artist(name) VALUES
 	("Usher"),
 	("Boston"),
 	("Coldplay");
+INSERT INTO Title(text) VALUES
+	("Baby Got Back"),
+	("Ice Ice Baby"),
+	("Margaritaville"),
+	("Wanted Dead Or Alive"),
+	("Girls Just Wanna Have Fun"),
+	("Come Together"),
+	("Tribute"),
+	("Bohemian Rhapsody"),
+	("What I've Done"),
+	("Sure and Certain"),
+	("No Problem"),
+	("False Alarm"),
+	("Such Great Heights"),
+	("Crash"),
+	("More Than A Feeling"),
+	("Peace of Mind"),
+	("Everglow"),
+	("Hymn for the Weekend"),
+	("Fun");
