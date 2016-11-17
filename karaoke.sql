@@ -44,6 +44,7 @@ CREATE TABLE FreeAdd (
 	userID INT,
 	fileID INT,
 	time TIME,
+	played BOOLEAN,
 	FOREIGN KEY (userID) REFERENCES User(userID),
 	FOREIGN KEY (fileID) REFERENCES File(fileID));
 CREATE TABLE PaidAdd (
@@ -51,6 +52,7 @@ CREATE TABLE PaidAdd (
 	userID INT,
 	fileID INT,
 	time TIME,
+	played BOOLEAN,
 	FOREIGN KEY (userID) REFERENCES User(userID),
 	FOREIGN KEY (fileID) REFERENCES File(fileID));
 
