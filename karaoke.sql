@@ -153,4 +153,53 @@ INSERT INTO File(artistID,titleID) VALUES
 Type this in SQL to display the Title and Artist
 SELECT text, name FROM File F, Artist A, Title T where F.artistID = A.artistID AND F.titleID = T.titleID;
 If anyone else can check the data to make sure that it is correct, it'd be appreciated.  
-*/	
+*/
+INSERT INTO Contributes(fileID,contribID,type) VALUES
+	(1,1,"Writer"),
+	(1,2,"Producter"),
+	(2,3,"Writer"),
+	(2,4,"Producter"),
+	(3,5,"Writer"),
+	(3,6,"Producter"),
+	(4,7,"Writer"),
+	(4,8,"Producter"),
+	(5,9,"Writer"),
+	(5,10,"Producter"),
+	(6,11,"Writer"),
+	(6,12,"Writer"),
+	(6,13,"Producter"),
+	(7,11,"Writer"),
+	(7,12,"Writer"),
+	(8,14,"Writer"),
+	(8,15,"Writer"),
+	(8,16,"Producter"),
+	(9,17,"Writer"),
+	(9,18,"Producter"),
+	(10,2,"Producter"),
+	(10,19,"Producter"),
+	(11,20,"Writer"),
+	(11,21,"Producter"),
+	(12,22,"Writer"),
+	(12,23,"Producter"),
+	(13,24,"Writer"),
+	(13,25,"Producter"),
+	(14,26,"Writer"),
+	(14,27,"Writer"),
+	(14,28,"Producter"),
+	(15,29,"Writer"),
+	(15,30,"Producter"),
+	(16,31,"Production"),
+	(16,32,"Direction"),
+	(16,33,"Direction"),
+	(17,31,"Production"),
+	(17,32,"Direction"),
+	(17,34,"Mixing"),
+	(18,35,"Vocals"),
+	(19,36,"Vocals"),
+	(19,37,"Brass"),
+	(20,38,"Vocals");
+/*
+SELECT F.fileID, name, type from Contributes C, File F, Contributor CC where C.contribID = CC.contribID AND C.fileID = F.fileID;
+Shows the title, artist, contributor, and type (title/artist repeat but this is for show so yeah)
+SELECT text, A.name, CC.name, type FROM Artist A, Contributes C, Title T, File F, Contributor CC where F.artistID = A.artistID AND F.titleID = T.titleID AND C.fileID = F.fileID AND C.contribID = CC.contribID;
+*/
