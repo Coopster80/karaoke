@@ -1,3 +1,6 @@
+/* DEBUG STATEMENT*/
+/* SELECT CC.name AS Contributor, text AS Title, A.name AS Artist, type AS Type FROM Artist A, Contributes C, Title T, File F, Contributor CC where F.artistID = A.artistID AND F.titleID = T.titleID AND C.fileID = F.fileID AND C.contribID = CC.contribID;*/
+
 /* Drop tables if they already exist*/
 DROP TABLE IF EXISTS Contributes;
 DROP TABLE IF EXISTS FreeAdd;
@@ -50,6 +53,8 @@ CREATE TABLE PaidAdd (
 	time TIME,
 	FOREIGN KEY (userID) REFERENCES User(userID),
 	FOREIGN KEY (fileID) REFERENCES File(fileID));
+
+/* Insert data into tables*/
 INSERT INTO Contributor(name) VALUES
 	("Anthony Ray"),
 	("Rick Rubin"),
@@ -127,7 +132,6 @@ INSERT INTO Title(text) VALUES
 	("Everglow"),
 	("Hymn for the Weekend"),
 	("Fun");
-/* Typed by Edward */
 INSERT INTO File(artistID,titleID) VALUES
 	(1,1),
 	(2,2),
@@ -149,11 +153,6 @@ INSERT INTO File(artistID,titleID) VALUES
 	(17,17),
 	(17,18),
 	(17,19);
-/* 
-Type this in SQL to display the Title and Artist
-SELECT text, name FROM File F, Artist A, Title T where F.artistID = A.artistID AND F.titleID = T.titleID;
-If anyone else can check the data to make sure that it is correct, it'd be appreciated.  
-*/
 INSERT INTO Contributes(fileID,contribID,type) VALUES
 	(1,1,"Writer"),
 	(1,2,"Producer"),
@@ -198,8 +197,3 @@ INSERT INTO Contributes(fileID,contribID,type) VALUES
 	(19,36,"Vocals"),
 	(19,37,"Brass"),
 	(20,38,"Vocals");
-/*
-SELECT F.fileID, name, type from Contributes C, File F, Contributor CC where C.contribID = CC.contribID AND C.fileID = F.fileID;
-Shows the title, artist, contributor, and type (title/artist repeat but this is for show so yeah)
-SELECT text, A.name, CC.name, type FROM Artist A, Contributes C, Title T, File F, Contributor CC where F.artistID = A.artistID AND F.titleID = T.titleID AND C.fileID = F.fileID AND C.contribID = CC.contribID;
-*/
