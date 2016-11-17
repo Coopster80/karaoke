@@ -1,107 +1,99 @@
-==============================
-Devin's list:
 1.
-
-  Title: Baby Got Back 
-  Artist: Sir Mix-A-Lot
-  Contributer(s): Writer - Anthony Ray
-                  Producer - Rick Rubin
+Title: Baby Got Back 
+Artist: Sir Mix-A-Lot
+Contributer(s): Writer - Anthony Ray Producer - Rick Rubin
 
 2.
-
-  Title: Ice Ice Baby
-  Artist: Vanilla Ice
-  Contributer(s): Writer - Earthquake
-                  Producer - Vanilla Ice
+Title: Ice Ice Baby
+Artist: Vanilla Ice
+Contributer(s): Writer - Earthquake Producer - Vanilla Ice
 
 3.
-
-  Title: Margaritaville
-  Artist: Jimmy Buffet
-  Contributer(s): Writer - Jimmy Buffet
-                  Producer - Norbert Putnam
+Title: Margaritaville
+Artist: Jimmy Buffet
+Contributer(s): Writer - Jimmy Buffet Producer - Norbert Putnam
 
 4.
-
-  Title: Wanted Dead Or Alive
-  Artist: Bon Jovi
-  Contributer(s): Writer - Richie Sambora
-                  Producer - Bruce Fairbairn
+Title: Wanted Dead Or Alive
+Artist: Bon Jovi
+Contributer(s): Writer - Richie Sambora Producer - Bruce Fairbairn
 
 5.
+Title: Girls Just Wanna Have Fun
+Artist: Cyndi Lauper
+Contributer(s): Writer - Robert Hazard Producer - Rick Chertoff
 
-  Title: Girls Just Wanna Have Fun
-  Artist: Cyndi Lauper
-  Contributer(s): Writer - Robert Hazard
-                  Producer - Rick Chertoff
+6.
+Title: Come Together 
+Artist: The Beatles 
+Contributer(s): John Lenon(Writer), Paul McCartney(Writer) George Martin(Producer)
 
-==============================
-==============================
-Brandon's list:
-1.
-  Title: Come Together 
-  Artist: The Beatles 
-  Contributer(s): John Lenon(Writer), Paul McCartney(Writer) George Martin(Producer)
-2.
-  Title: Come Together
-  Artist: Aerosmith
-  Contributer(s): John Lenon(Writer), Paul McCartney(Writer)
-3.
-  Title: Tribute
-  Artist: Tenacious D
-  Contributer(s): Jack Black(Writer), Kyle Gass(Writer), The Dust Brothers(Producer)
-4.
-  Title: Bohemian Rhapsody
-  Artist: Queen
-  Contributer(s): Freddie Mercury(Writer), Roy Thomas Baker(Producer)
-5.
-  Title: What I've Done
-  Artist: Linkin Park
-  Contributer(s): Rick Rubin(Producer), Mike Shinoda(Producer)
-==============================
-==============================
-Edward's list:
-1.
-  Title: Sure and Certain
-  Artist: Jimmy Eat World
-  Contributer(s): Jim Adkins (Writer), Just Meldal-Johnsen (Producer)
-2.
-  Title: No Problem
-  Artist: Chance the Rapper, Lil Wayne, 2 Chainz
-  Contributer(s): Chancelor Bennett (Writer), Brasstracks (Producer)
-3.
-  Title: False Alarm
-  Artist: The Weeknd
-  Contributer(s): Abel Tesfaye (Writer), Martin McKinney (Producer)
-4.
-  Title: Such Great Heights
-  Artist: Postal Service
-  Contributer(s): Ben Gibbard (Writer), Jimmy Tamborello (Writer), The Postal Service (Producer)
-5.
-  Title: Crash
-  Artist: Usher
-  Contributer(s): Usher Raymond IV (Writer), Carlos St. John (Producer)
-==============================
-==============================
-Nolan's List:
-1.
-  Title: More Than A Feeling
-  Artist: Boston
-  Contributer(s): John Boylan(Production), Paul Ahern(Direction), Charles McKenzie(Direction)
-2.
-  Title: Peace of Mind
-  Artist: Boston
-  Contributer(s): John Boylan(Production), Paul Ahern(Direction), Steve Hodge(Mixing)
-3.
-  Title: Everglow
-  Artist: Coldplay
-  Contributer(s): Gwyneth Paltrow(Vocals)
-4.
-  Title: Hymn for the Weekend
-  Artist: Coldplay
-  Contributer(s): Beyonce(Vocals), Regiment Horns(Brass)
-5.
-  Title: Fun
-  Artist: Coldplay
-  Contributer(s): Tove Lo(Vocals)
-==============================
+7.
+Title: Come Together
+Artist: Aerosmith
+Contributer(s): John Lenon(Writer), Paul McCartney(Writer)
+
+8.
+Title: Tribute
+Artist: Tenacious D
+Contributer(s): Jack Black(Writer), Kyle Gass(Writer), The Dust Brothers(Producer)
+
+9.
+Title: Bohemian Rhapsody
+Artist: Queen
+Contributer(s): Freddie Mercury(Writer), Roy Thomas Baker(Producer)
+
+10.
+Title: What I've Done
+Artist: Linkin Park
+Contributer(s): Rick Rubin(Producer), Mike Shinoda(Producer)
+
+11.
+Title: Sure and Certain
+Artist: Jimmy Eat World
+Contributer(s): Jim Adkins (Writer), Just Meldal-Johnsen (Producer)
+
+12.
+Title: No Problem
+Artist: Chance the Rapper, Lil Wayne, 2 Chainz
+Contributer(s): Chancelor Bennett (Writer), Brasstracks (Producer)
+
+13.
+Title: False Alarm
+Artist: The Weeknd
+Contributer(s): Abel Tesfaye (Writer), Martin McKinney (Producer)
+
+14.
+Title: Such Great Heights
+Artist: Postal Service
+Contributer(s): Ben Gibbard (Writer), Jimmy Tamborello (Writer), The Postal Service (Producer)
+
+15.
+Title: Crash
+Artist: Usher
+Contributer(s): Usher Raymond IV (Writer), Carlos St. John (Producer)
+
+16.
+Title: More Than A Feeling
+Artist: Boston
+Contributer(s): John Boylan(Production), Paul Ahern(Direction), Charles McKenzie(Direction)
+
+17.
+Title: Peace of Mind
+Artist: Boston
+Contributer(s): John Boylan(Production), Paul Ahern(Direction), Steve Hodge(Mixing)
+
+18.
+Title: Everglow
+Artist: Coldplay
+Contributer(s): Gwyneth Paltrow(Vocals)
+
+19.
+Title: Hymn for the Weekend
+Artist: Coldplay
+Contributer(s): Beyonce(Vocals), Regiment Horns(Brass)
+
+20.
+Title: Fun
+Artist: Coldplay
+Contributer(s): Tove Lo(Vocals)
