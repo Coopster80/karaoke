@@ -22,10 +22,19 @@ catch(PDOexception $e) { // handle that exception
 		<h1>Search Results</h1>
 		<table>
 			<tr>
-				<th>Title<th>
+				<th>Title</th>
 				<th>Artist</th>
 				<th>Contributors</th>
 			</tr>
+			<?
+			$sql = "SELECT T.text FROM Title T, File F WHERE T.text LIKE ? AND T.titleID = F.fileID;";
+			$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+			$stmt->execute(array("%{$_POST['searchbox']}%"));
+			while ($result = $stmt->fetch(PDO::FETCH_BOTH))
+			{
+				echo "<tr><td>" . $result[text] . "</td></tr>";
+			}
+			?>
 		</table>
 		</div>
 	</body>
