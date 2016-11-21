@@ -12,21 +12,33 @@ catch(PDOexception $e) { // handle that exception
 <html>
  <body>
                 
-   <h1>Search By Title Results</h1>
-   <div class="search-results">
+   <h1>Result list</h1>
+   <div class="results">
    <table class="result-table">
     <thead>
      <tr>
         <th>Select</th>
         <th>Title</th>
         <th>Artist</th>
-        <th>Contributors</th>
+        <th>Name</th>
       </tr>
      </thead>
     <tbody>
 
+    <!-- paid add view -->
+    <?
+      $sql = "SELECT F.titleID as Title, F.artistID as Artist, A.userID as Name FROM File F, PaidAdd A WHERE F.fileID = A.fileID GROUP BY F.titleID;"
+      $result = $pdo->query($sql);
+    ?>
 
-  </tbody>
+
+    <!-- free add view -->
+    <?
+      $sql = "SELECT F.titleID as Title, F.artistID as Artist, A.userID as Name FROM File F, FreeAdd A WHERE F.fileID = A.fileID GROUP BY F.titleID;"
+      $result = $pdo->query($sql);
+    ?>
+
+   </tbody>
  </body>
 </html>
 
