@@ -20,7 +20,7 @@ catch(PDOexception $e) { // handle that exception
 	<body>
 		<form method="post" action="submit.php">
 		<h1>Search By Title Results</h1>
-		<div class="search-results">
+		<div class="results">
 		<table class="result-table">
 			<thead>
 			<tr>
@@ -52,7 +52,7 @@ catch(PDOexception $e) { // handle that exception
 		</table>
 		</div>
 		<h1>Search by Artist Results</h1>
-		<div class="search-results">
+		<div class="results">
 		<table class="result-table">
 			<thead>
 			<tr>
@@ -84,7 +84,7 @@ catch(PDOexception $e) { // handle that exception
 		</table>
 		</div>
 		<h1>Search by Contributor Results</h1>
-		<div class="search-results">
+		<div class="results">
 		<table class="result-table">
 			<thead>
 			<tr>
