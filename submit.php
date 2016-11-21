@@ -14,16 +14,17 @@
 		{
 			if ($_POST[free])
 			{
-				echo "FREE";
+				echo "<h1>Free Queue Submission</h1>";
 			}
 			else
 			{
-				echo "PAID";
+				echo "<h1>Paid Queue Submission</h1>";
 			}
 		}
 		else
 		{
 			echo "Please select a song";
+			echo "<br><a href='search.php'>Back to Search</a>";
 		}
 		?>
 	</body>
