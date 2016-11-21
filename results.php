@@ -18,6 +18,7 @@ catch(PDOexception $e) { // handle that exception
 		<link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/av/2x_web/ic_queue_music_black_48dp.png" type="image/png">
 	</head>
 	<body>
+		<form method="post" action="submit.php">
 		<h1>Search By Title Results</h1>
 		<div class="search-results">
 		<table class="result-table">
@@ -110,5 +111,7 @@ catch(PDOexception $e) { // handle that exception
 			</tbody>
 		</table>
 		</div>
+		<input type="submit" name="paid" value="Paid Queue">
+		<input type="submit" name="free" value="Free Queue">
 	</body>
 </html>
