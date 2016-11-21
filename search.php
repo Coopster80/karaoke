@@ -19,7 +19,7 @@ catch(PDOexception $e) { // handle that exception
 	</head>
 	<body>
 		<div class="search">
-			<h1>Karakoe</h1>
+			<h1>Karaoke</h1>
 			<form method="post" action="results.php">
 				<input type="text" name="searchbox" class="searchbox" placeholder="Search">
 			</form>

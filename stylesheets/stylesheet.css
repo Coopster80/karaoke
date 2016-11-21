@@ -28,7 +28,7 @@ table.result-table {
 	border-spacing: 0;
 	width: 100%;
 	table-layout: fixed;
-	padding: 16px 0;
+	padding: 16px 0px 0px 0px;
 	text-align: left;
 }
 .result-table tr {
