@@ -20,12 +20,15 @@ catch(PDOexception $e) { // handle that exception
 	<body>
 		<h1>Search By Title Results</h1>
 		<div class="search-results">
-		<table>
+		<table class="result-table">
+			<thead>
 			<tr>
 				<th>Title</th>
 				<th>Artist</th>
 				<th>Contributors</th>
 			</tr>
+			</thead>
+			<tbody>
 			<?
 			$sql = "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID;";
 			$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
@@ -43,16 +46,20 @@ catch(PDOexception $e) { // handle that exception
 				echo "</td></tr>";
 			}
 			?>
+			</tbody>
 		</table>
 		</div>
 		<h1>Search by Artist Results</h1>
 		<div class="search-results">
-		<table>
+		<table class="result-table">
+			<thead>
 			<tr>
 				<th>Artist</th>
 				<th>Title</th>
 				<th>Contributors</th>
 			</tr>
+			</thead>
+			<tbody>
 			<?
 			$sql = "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID;";
 			$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
@@ -70,16 +77,20 @@ catch(PDOexception $e) { // handle that exception
 				echo "</td></tr>";
 			}
 			?>
+			</tbody>
 		</table>
 		</div>
 		<h1>Search by Contributor Results</h1>
 		<div class="search-results">
-		<table>
+		<table class="result-table">
+			<thead>
 			<tr>
 				<th>Contributor</th>
 				<th>Title</th>
 				<th>Artist</th>
 			</tr>
+			</thead>
+			<tbody>
 			<?
 			$sql = "SELECT C.name, CC.type, F.fileID FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND C.name LIKE ?;";
 			$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
@@ -93,6 +104,7 @@ catch(PDOexception $e) { // handle that exception
 				echo "<tr><td>" . $result[name] . '(' . $result[type] . ") </td><td>" . $result2[title] . "</td><td>" . $result2[artist] . "</td></tr>";
 			}
 			?>
+			</tbody>
 		</table>
 		</div>
 	</body>

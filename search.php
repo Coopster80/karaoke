@@ -18,7 +18,7 @@ catch(PDOexception $e) { // handle that exception
 		<link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/av/2x_web/ic_queue_music_black_48dp.png" type="image/png">
 	</head>
 	<body>
-		<div class="main-content">
+		<div class="search">
 			<h1>Karakoe</h1>
 			<form method="post" action="results.php">
 				<input type="text" name="searchbox" class="searchbox" placeholder="Search">

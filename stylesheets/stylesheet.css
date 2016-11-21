@@ -7,16 +7,52 @@ body {
 	font-family: Arial, sans-serif;
 	font-size: 16px;
 }
-.main-content{
+div, table {
+	outline: none;
+}
+div.search{
 	max-width: 64rem;
 	padding: 2rem 6rem;
 	margin: 0 auto;
 	text-align: center;
 }
+div.search-results {
+	position: relative;
+	background-color: white;
+	border-radius: 2px;
+	margin: 24px 72px 0;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+}
+table.result-table {
+	cursor: pointer;
+	border-spacing: 0;
+	width: 100%;
+	table-layout: fixed;
+	padding: 16px 0;
+	text-align: left;
+}
+.result-table tr {
+	background-color: white;
+}
+.result-table tr:hover {
+	background-color: #eee;
+}
+.result-table th {
+	height: 36px;
+	text-transform: uppercase;
+	padding: 0;
+}
+.result-table td {
+	height: 64px;
+	line-height: 64px;
+}
+.result-table th:first-child, .result-table td:first-child {
+	padding-left: 16px;
+}
 input[type=text].searchbox {
 	outline: none;
 	border: none;
-	border-radius: 1px;
+	border-radius: 2px;
 	box-shadow: none;
 	font-size: 1.1rem;
 	background-color: #eee;
