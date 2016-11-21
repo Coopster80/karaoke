@@ -98,7 +98,7 @@ INSERT INTO Contributor(name) VALUES
 	("Tove Lo");
 INSERT INTO Artist(name) VALUES
 	("Sir Mix-A-Lot"),
-	("Vamilla Ice"),
+	("Vanilla Ice"),
 	("Jimmy Buffet"),
 	("Bon Jovi"),
 	("Cyndi Lauper"),
