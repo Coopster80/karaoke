@@ -31,10 +31,7 @@ table.result-table {
 	padding: 16px 0px 0px 0px;
 	text-align: left;
 }
-.result-table tr {
-	background-color: white;
-}
-.result-table tr:hover {
+.result-table tr.item:hover {
 	background-color: #eee;
 }
 .result-table th {
@@ -48,6 +45,11 @@ table.result-table {
 }
 .result-table th:first-child, .result-table td:first-child {
 	padding-left: 16px;
+	width: 100px;
+}
+.result-table td:first-child {
+	padding-left: 0;
+	text-align: center;
 }
 input[type=text].searchbox {
 	outline: none;

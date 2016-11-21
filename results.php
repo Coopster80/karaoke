@@ -23,6 +23,7 @@ catch(PDOexception $e) { // handle that exception
 		<table class="result-table">
 			<thead>
 			<tr>
+				<th>Select</th>
 				<th>Title</th>
 				<th>Artist</th>
 				<th>Contributors</th>
@@ -38,7 +39,7 @@ catch(PDOexception $e) { // handle that exception
 				$sql = "SELECT C.name, CC.type FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND F.fileID = ?;";
 				$stmt2 = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 				$stmt2->execute(array($result['fileID']));
-				echo "<tr><td>" . $result[title] . "</td><td>" . $result[artist] . "</td><td>";
+				echo "<tr class='item'><td><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></td><td>" . $result[title] . "</td><td>" . $result[artist] . "</td><td>";
 				while ($result2 = $stmt2->fetch(pdo::FETCH_BOTH))
 				{
 					echo $result2[name] . '(' . $result2[type] . ") ";
@@ -54,6 +55,7 @@ catch(PDOexception $e) { // handle that exception
 		<table class="result-table">
 			<thead>
 			<tr>
+				<th>Select</th>
 				<th>Artist</th>
 				<th>Title</th>
 				<th>Contributors</th>
@@ -69,7 +71,7 @@ catch(PDOexception $e) { // handle that exception
 				$sql = "SELECT C.name, CC.type FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND F.fileID = ?;";
 				$stmt2 = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 				$stmt2->execute(array($result['fileID']));
-				echo "<tr><td>" . $result[artist] . "</td><td>" . $result[title] . "</td><td>";
+				echo "<tr class='item'><td><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></td><td>" . $result[artist] . "</td><td>" . $result[title] . "</td><td>";
 				while ($result2 = $stmt2->fetch(pdo::FETCH_BOTH))
 				{
 					echo $result2[name] . '(' . $result2[type] . ") ";
@@ -85,6 +87,7 @@ catch(PDOexception $e) { // handle that exception
 		<table class="result-table">
 			<thead>
 			<tr>
+				<th>Select</th>
 				<th>Contributor</th>
 				<th>Title</th>
 				<th>Artist</th>
@@ -101,7 +104,7 @@ catch(PDOexception $e) { // handle that exception
 				$stmt2 = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 				$stmt2->execute(array($result['fileID']));
 				$result2 = $stmt2->fetch(pdo::FETCH_BOTH);
-				echo "<tr><td>" . $result[name] . '(' . $result[type] . ") </td><td>" . $result2[title] . "</td><td>" . $result2[artist] . "</td></tr>";
+				echo "<tr class='item'><td><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></td><td>" . $result[name] . '(' . $result[type] . ") </td><td>" . $result2[title] . "</td><td>" . $result2[artist] . "</td></tr>";
 			}
 			?>
 			</tbody>
