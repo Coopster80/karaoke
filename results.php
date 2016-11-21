@@ -27,12 +27,12 @@ catch(PDOexception $e) { // handle that exception
 				<th>Contributors</th>
 			</tr>
 			<?
-			$sql = "SELECT T.text FROM Title T, File F WHERE T.text LIKE ? AND T.titleID = F.fileID;";
+			$sql = "SELECT T.text AS title, A.name AS artist FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID;";
 			$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 			$stmt->execute(array("%{$_POST['searchbox']}%"));
 			while ($result = $stmt->fetch(PDO::FETCH_BOTH))
 			{
-				echo "<tr><td>" . $result[text] . "</td></tr>";
+				echo "<tr><td>" . $result[title] . "</td><td>" . $result[artist] . "</td></tr>";
 			}
 			?>
 		</table>
