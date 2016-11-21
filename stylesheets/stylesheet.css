@@ -42,13 +42,17 @@ table.result-table {
 .result-table td {
 	height: 64px;
 	line-height: 64px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .result-table th:first-child, .result-table td:first-child {
-	padding-left: 16px;
 	width: 100px;
 }
+.result-table th:first-child {
+	padding-left: 16px;
+}
 .result-table td:first-child {
-	padding-left: 0;
 	text-align: center;
 }
 input[type=text].searchbox {
@@ -69,4 +73,9 @@ input[type=text].searchbox {
 input[type=text].searchbox:focus {
 	background-color: white;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media screen and (max-width: 42em) {
+	div.search-results {
+		margin: 24px 12px 0;
+	}
 }
