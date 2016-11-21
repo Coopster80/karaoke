@@ -113,5 +113,6 @@ catch(PDOexception $e) { // handle that exception
 		</div>
 		<input type="submit" name="paid" value="Paid Queue">
 		<input type="submit" name="free" value="Free Queue">
+		</form>
 	</body>
 </html>
