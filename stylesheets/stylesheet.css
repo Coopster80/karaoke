@@ -16,7 +16,7 @@ div.search{
 	margin: 0 auto;
 	text-align: center;
 }
-div.search-results {
+div.results {
 	position: relative;
 	background-color: white;
 	border-radius: 2px;
