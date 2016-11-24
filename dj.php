@@ -35,7 +35,12 @@ catch(PDOexception $e) { // handle that exception
     <?
       $sql = "SELECT F.titleID as Title, F.artistID as Artist, A.userID as Name FROM File F, PaidAdd A WHERE F.fileID = A.fileID GROUP BY F.titleID;"
       $prepare = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-      $result = $prepare->execute(array($result['IDK WHAT TO PUT HERE']));
+      $prepare->execute(array($result['paid']));
+      while ($result = $prepare->fetch(pdo::FETCH_BOTH))
+      {
+      echo "<tr class='item'><td><input type='radio' name='selected' value='" . "</td><td>" . $result[title] . "</td><td>" . $result[artist] . "</td><td>" . $result[userID] . "</td";
+      }
+      
     ?>
 
 
@@ -48,7 +53,12 @@ catch(PDOexception $e) { // handle that exception
     <?
       $sql = "SELECT F.titleID as Title, F.artistID as Artist, A.userID as Name FROM File F, FreeAdd A WHERE F.fileID = A.fileID GROUP BY F.titleID;"
       $prepare = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-      $result = $prepare->execute(array($result['IDK WHAT TO PUT HERE']));
+      $prepare->execute(array($result['free']));
+      while ($result = $prepare->fetch(pdo::FETCH_BOTH))
+      {
+      echo "<tr class='item'><td><input type='radio' name='selected' value='" . "</td><td>" . $result[title] . "</td><td>" . $result[artist] . "</td><td>" . $result[userID] . "</td";
+      }
+
     ?>
 
    </tbody>
