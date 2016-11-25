@@ -52,6 +52,7 @@ CREATE TABLE PaidAdd (
 	userID INT,
 	fileID INT,
 	time TIME,
+	amount DECIMAL(8,2),
 	played BOOLEAN,
 	FOREIGN KEY (userID) REFERENCES User(userID),
 	FOREIGN KEY (fileID) REFERENCES File(fileID));
