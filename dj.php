@@ -47,7 +47,7 @@ catch(PDOexception $e) { // handle that exception
       {
         if ($_POST[paid])
         {
-          $sql = "SELECT F.titleID as Title, F.artistID as Artist, A.userID as Name FROM File F, PaidAdd A WHERE F.fileID = A.fileID GROUP BY F.titleID;"
+          $sql = "SELECT F.titleID as Title, F.artistID as Artist, A.userID as Name FROM File F, PaidAdd A WHERE F.fileID = A.fileID GROUP BY F.titleID;";
           $prepare = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
           $prepare->execute(array($result['paid']));
           while ($result = $prepare->fetch(pdo::FETCH_BOTH))
@@ -66,7 +66,7 @@ catch(PDOexception $e) { // handle that exception
        else
        {
      
-        $sql = "SELECT F.titleID as Title, F.artistID as Artist, A.userID as Name FROM File F, FreeAdd A WHERE F.fileID = A.fileID GROUP BY F.titleID;"
+        $sql = "SELECT F.titleID as Title, F.artistID as Artist, A.userID as Name FROM File F, FreeAdd A WHERE F.fileID = A.fileID GROUP BY F.titleID;";
         $prepare = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $prepare->execute(array($result['free']));
         while ($result = $prepare->fetch(pdo::FETCH_BOTH))

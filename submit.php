@@ -15,17 +15,17 @@
 			if ($_POST[free]) //Devin: Check the syntax on these statements I suck at them
 			{
 				echo "<h1>Free Queue Submission</h1>";
-                                echo "<p>Enter your name:  " . "<input type="text"" . "name="freeUsername">" . "</p>";
-                                echo "<input type="submit" name="free" value="Free Name" form="complete">";
+                                echo "<p>Enter your name:  <input type=\"text\" name=\"freeUsername\"></p>";
+                                echo "<input type=\"submit\" name=\"free\" value=\"Submit\" form=\"complete\">";
 			}
 			else
 			{
 				echo "<h1>Paid Queue Submission</h1>";
-                                echo "<p>Enter your name:  " . "<input type="text"" . "name="paidUsername">" . "</p>";
-                                echo "<input type="submit" name="paid" value="Paid Name" form="complete">";
+                                echo "<p>Enter your name: <input type=\"text\" name=\"paidUsername\"></p>";
+                                echo "<input type=\"submit\" name=\"paid\" value=\"Submit\" form=\"complete\">";
                                 //Drop down menu with how much they are going to pay? Or just a text box with the amount....
-                                echo "<p>Credit card number:  " . "<input type="text"" . "name="ccNumber">" . "</p>";
-                                echo "<input type="submit" name="paid" value="ccNumber" form="complete">";
+                                echo "<p>Credit card number:  <input type=\"text\" name=\"ccNumber\"></p>";
+                                echo "<input type=\"submit\" name=\"paid\" value=\"Submit\" form=\"complete\">";
 			}
 		}
 		else
