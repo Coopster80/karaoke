@@ -8,7 +8,6 @@ catch(PDOexception $e) { // handle that exception
         echo "Connection to database failed: " . $e->getMessage();
 }
 ?>
-
 <html>
  <head>
    <meta charset="UTF-8">
@@ -19,7 +18,7 @@ catch(PDOexception $e) { // handle that exception
    <link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/av/2x_web/ic_queue_music_black_48dp.png" type="image/png">
  </head>
  <body>
-   <form id="DJ" method="post" action="dj.php">                
+   <form id="DJ" method="post" action="dj.php">
    <h1>Result list</h1>
    <div class="results">
    <table class="result-table">
@@ -32,7 +31,6 @@ catch(PDOexception $e) { // handle that exception
       </tr>
      </thead>
     <tbody>
-    
     <?
 
      /* 
@@ -54,7 +52,6 @@ catch(PDOexception $e) { // handle that exception
           {
             echo "<tr class='item'><td><input type='radio' name='selected' value='" . "</td><td>" . $result[title] . "</td><td>" . $result[artist] . "</td><td>" . $result[userID] . "</td";
           }
-      
         }
 
      /* 
@@ -65,7 +62,6 @@ catch(PDOexception $e) { // handle that exception
 
        else
        {
-     
         $sql = "SELECT F.titleID as Title, F.artistID as Artist, A.userID as Name FROM File F, FreeAdd A WHERE F.fileID = A.fileID GROUP BY F.titleID;";
         $prepare = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $prepare->execute(array($result['free']));
@@ -73,15 +69,10 @@ catch(PDOexception $e) { // handle that exception
         {
            echo "<tr class='item'><td><input type='radio' name='selected' value='" . "</td><td>" . $result[title] . "</td><td>" . $result[artist] . "</td><td>" . $result[userID] . "</td";
         }
- 
        }
-
       }
     ?>
-
    </tbody>
   </form>
  </body>
 </html>
-
-
