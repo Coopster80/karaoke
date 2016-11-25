@@ -16,7 +16,7 @@
 5. Implement the web application using PHP
 
 ### Links
-- Used for Reference: http://students.cs.niu.edu/~z1701294/Movie%20Assignment/listMovies.php
-- Edward's Project Link: http://students.cs.niu.edu/~z1701294/Karaoke%20Project/
-- Brandon's Project Link:  http://students.cs.niu.edu/~z1737028/karaoke/home.php
+- Edward's Project Link: http://students.cs.niu.edu/~z1701294/Karaoke%20Project/search.php
+- Brandon's Project Link:  http://students.cs.niu.edu/~z1737028/karaoke/search.php
 - Nolan's Project Link: http://students.cs.niu.edu/~z1766022/karaoke/search.php
+- Devin's Project Link: http://students.cs.niu.edu/~z1670115/karaoke/search.php
