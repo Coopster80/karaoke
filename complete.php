@@ -28,6 +28,7 @@ if ($_POST[paid])
 	if ($result)
 	{
 		echo "User already in database";
+		$uid = $result[userID];
 	}
 	else
 	{
@@ -35,14 +36,38 @@ if ($_POST[paid])
 		$stmt2 = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 		$stmt2->execute(array(':name' => $_POST['name'], ':ccNum' => $_POST['ccNumber']));
 		echo "User " . $_POST[name] . " has been added to the database with credit card number " . $_POST[ccNumber];
+		$uid= $pdo->lastInsertId();
 	}
+	$time = date('H:i:s', time());
+	$sql = "INSERT INTO PaidAdd(userID, fileID, time, amount, played) VALUES(:userID, :fileID, :time, :amount, false);";
+	$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+	$stmt->execute(array(':userID' => $uid, ':fileID' => $_POST['file'], ':time' => $time, ':amount' => $_POST['amount']));
+	echo "<br>Song " . $_POST['file'] . " has been added to the paid queue by user " . $uid . " at " . $time . " for " . $_POST[amount] . " dollars.";
 }
 else
 {
-	$sql = "INSERT INTO User(name) VALUES(:name);";
+	$sql = "SELECT * FROM User WHERE name = :name;";
 	$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 	$stmt->execute(array(':name' => $_POST['name']));
-	echo "User " . $_POST[name] . " has been added to the database.";
+	$result = $stmt->fetch(pdo::FETCH_BOTH);
+	if ($result)
+	{
+		echo "User already in database";
+		$uid = $result[userID];
+	}
+	else
+	{
+		$sql = "INSERT INTO User(name) VALUES(:name);";
+		$stmt2 = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+		$stmt2->execute(array(':name' => $_POST['name']));
+		echo "User " . $_POST[name] . " has been added to the database";
+		$uid= $pdo->lastInsertId();
+	}
+	$time = date('H:i:s', time());
+	$sql = "INSERT INTO FreeAdd(userID, fileID, time, played) VALUES(:userID, :fileID, :time, false);";
+	$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+	$stmt->execute(array(':userID' => $uid, ':fileID' => $_POST['file'], ':time' => $time));
+	echo "<br>Song " . $_POST['file'] . " has been added to the free queue by user " . $uid . " at " . $time;
 }
 ?>
 	</body>
