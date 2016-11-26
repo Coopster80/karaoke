@@ -55,7 +55,7 @@ table.result-table {
 .result-table td:first-child {
 	text-align: center;
 }
-input[type=text].searchbox {
+input[type=search].searchbox {
 	outline: none;
 	border: none;
 	border-radius: 2px;
@@ -70,12 +70,12 @@ input[type=text].searchbox {
 	transition: box-shadow 0.2s, background-color 0.2s;
 	transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 }
-input[type=text].searchbox:focus {
+input[type=search].searchbox:focus {
 	background-color: white;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media screen and (max-width: 42em) {
-	div.search-results {
+	div.results {
 		margin: 24px 12px 0;
 	}
 }

@@ -21,7 +21,7 @@ catch(PDOexception $e) { // handle that exception
 		<div class="search">
 			<h1>Karaoke</h1>
 			<form method="post" action="results.php">
-				<input type="text" name="searchbox" class="searchbox" placeholder="Search">
+				<input type="search" name="searchbox" class="searchbox" placeholder="Search">
 			</form>
 		</div>
 	</body>
