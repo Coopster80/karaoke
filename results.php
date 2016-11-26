@@ -19,42 +19,40 @@ catch(PDOexception $e) { // handle that exception
 	</head>
 	<body>
 <?
- if ( ! empty($_POST['searchbox'])) {
-        $results = $_POST['searchbox'];
- }
-echo '<form id="Form1" action="results.php" method="POST">
-      <input type="hidden" name="searchbox" value='.$results.'> </form> ';		
-?>				
+if ( ! empty($_POST['searchbox'])) {
+	$results = $_POST['searchbox'];
+}
+echo '<form id="Form1" action="results.php" method="POST"><input type="hidden" name="searchbox" value='.$results.'></form>';
+?>
 		<form id="Form2" method="post" action="submit.php">
-		<h1>Search By Title Results</h1>
-		<div class="results">
-		<table class="result-table">
-			<thead>
-			<tr>
-				<th>Select</th>
-				<th>Title</th>
-				<th>Artist</th>
-				<th>Contributors</th>
-			</tr>
-			</thead>
-			<tbody>
+			<h1>Search By Title Results</h1>
+			<div class="results">
+				<table class="result-table">
+					<thead>
+						<tr>
+							<th>Select</th>
+							<th>Title</th>
+							<th>Artist</th>
+							<th>Contributors</th>
+						</tr>
+					</thead>
+					<tbody>
 <?
 //Start title sort
-if ($_POST[title] == "Sort by Ascending Order") {
-	echo '<input type="submit" value="Sort by Descending Order" name="title" class="title" form="Form1"/>';
-$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title ASC;";
+if ($_POST[title] == "Ascending") {
+	echo '<input type="submit" value="Descending" name="title" class="title" form="Form1"/>';
+	$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title ASC;";
 }
 
-else if ($_POST[title] == "Sort by Descending Order") {
-	echo '<input type="submit" value="Sort by Ascending Order" name="title" class="title" form="Form1"/>';
-$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title DESC;";
+else if ($_POST[title] == "Descending") {
+	echo '<input type="submit" value="Ascending" name="title" class="title" form="Form1"/>';
+	$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title DESC;";
 }
 else {
-$sql = "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title;";
-	echo '<input type="submit" value="Sort by Descending Order" name="title" class="title" form="Form1"/>';
+	$sql = "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title;";
+	echo '<input type="submit" value="Descending" name="title" class="title" form="Form1"/>';
 }
 //end title sort
-//$sql = "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID;";
 $stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt->execute(array("%{$_POST['searchbox']}%"));
 while ($result = $stmt->fetch(pdo::FETCH_BOTH))
@@ -70,38 +68,36 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 	echo "</td></tr>";
 }
 ?>
-			</tbody>
-		</table>
-		</div>
-		<h1>Search by Artist Results</h1>
-		<div class="results">
-		<table class="result-table">
-			<thead>
-			<tr>
-				<th>Select</th>
-				<th>Artist</th>
-				<th>Title</th>
-				<th>Contributors</th>
-			</tr>
-			</thead>
-			<tbody>
+					</tbody>
+				</table>
+			</div>
+			<h1>Search by Artist Results</h1>
+			<div class="results">
+				<table class="result-table">
+					<thead>
+						<tr>
+							<th>Select</th>
+							<th>Artist</th>
+							<th>Title</th>
+							<th>Contributors</th>
+						</tr>
+					</thead>
+					<tbody>
 <?
 //start artist sort
-if ($_POST[artist] == "Sort by Ascending Order") {
-	echo '<input type="submit" value="Sort by Descending Order" name="artist" class="artist" form="Form1"/>';
-$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY artist ASC;";
+if ($_POST[artist] == "Ascending") {
+	echo '<input type="submit" value="Descending" name="artist" class="artist" form="Form1"/>';
+	$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY artist ASC;";
 }
-else if ($_POST[artist] == "Sort by Descending Order") {
-	echo '<input type="submit" value="Sort by Ascending Order" name="artist" class="artist" form="Form1"/>';
-$sql =   "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY artist DESC;";
+else if ($_POST[artist] == "Descending") {
+	echo '<input type="submit" value="Ascending" name="artist" class="artist" form="Form1"/>';
+	$sql =   "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY artist DESC;";
 }
 else {
-$sql = "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY artist ASC;";
-	echo '<input type="submit" value="Sort by Descending Order" name="artist" class="artist" form="Form1"/>';
+	$sql = "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY artist ASC;";
+	echo '<input type="submit" value="Descending" name="artist" class="artist" form="Form1"/>';
 }
-
 //end artist sort
-//$sql = "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID;";
 $stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt->execute(array("%{$_POST['searchbox']}%"));
 while ($result = $stmt->fetch(pdo::FETCH_BOTH))
@@ -117,39 +113,36 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 	echo "</td></tr>";
 }
 ?>
-			</tbody>
-		</table>
-		</div>
-		<h1>Search by Contributor Results</h1>
-		<div class="results">
-		<table class="result-table">
-			<thead>
-			<tr>
-				<th>Select</th>
-				<th>Contributor</th>
-				<th>Title</th>
-				<th>Artist</th>
-			</tr>
-			</thead>
-			<tbody>
+					</tbody>
+				</table>
+			</div>
+			<h1>Search by Contributor Results</h1>
+			<div class="results">
+				<table class="result-table">
+					<thead>
+						<tr>
+							<th>Select</th>
+							<th>Contributor</th>
+							<th>Title</th>
+							<th>Artist</th>
+						</tr>
+					</thead>
+					<tbody>
 <?
 //start contributor sort
-
-if ($_POST[cont] == "Sort by Ascending Order") {
-	echo '<input type="submit" value="Sort by Descending Order" name="cont" class="cont" form="Form1"/>';
-$sql =   "SELECT C.name, CC.type, F.fileID FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND C.name LIKE ? ORDER BY C.name ASC;";
+if ($_POST[cont] == "Ascending") {
+	echo '<input type="submit" value="Descending" name="cont" class="cont" form="Form1"/>';
+	$sql =   "SELECT C.name, CC.type, F.fileID FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND C.name LIKE ? ORDER BY C.name ASC;";
 }
-else if ($_POST[cont] == "Sort by Descending Order") {
-	echo '<input type="submit" value="Sort by Ascending Order" name="cont" class="cont" form="Form1"/>';
-$sql = "SELECT C.name, CC.type, F.fileID FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND C.name LIKE ? ORDER BY C.name DESC;";
+else if ($_POST[cont] == "Descending") {
+	echo '<input type="submit" value="Ascending" name="cont" class="cont" form="Form1"/>';
+	$sql = "SELECT C.name, CC.type, F.fileID FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND C.name LIKE ? ORDER BY C.name DESC;";
 }
 else {
-$sql = "SELECT C.name, CC.type, F.fileID FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND C.name LIKE ? ORDER BY C.name;";
-	echo '<input type="submit" value="Sort by Descending Order" name="cont" class="cont" form="Form1"/>';
+	$sql = "SELECT C.name, CC.type, F.fileID FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND C.name LIKE ? ORDER BY C.name;";
+	echo '<input type="submit" value="Descending" name="cont" class="cont" form="Form1"/>';
 }
 //end contributor sort
-
-//$sql = "SELECT C.name, CC.type, F.fileID FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND C.name LIKE ?;";
 $stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt->execute(array("%{$_POST['searchbox']}%"));
 while ($result = $stmt->fetch(pdo::FETCH_BOTH))
@@ -161,11 +154,11 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 	echo "<tr class='item'><td><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></td><td>" . $result[name] . '(' . $result[type] . ") </td><td>" . $result2[title] . "</td><td>" . $result2[artist] . "</td></tr>";
 }
 ?>
-			</tbody>
-		</table>
-		</div>
-		<input type="submit" name="paid" value="Paid Queue" form="Form2">
-		<input type="submit" name="free" value="Free Queue" form="Form2">
+					</tbody>
+				</table>
+			</div>
+			<input type="submit" name="paid" value="Paid Queue" form="Form2">
+			<input type="submit" name="free" value="Free Queue" form="Form2">
 		</form>
 	</body>
 </html>
