@@ -31,14 +31,9 @@ echo '<form id="Form1" action="results.php" method="POST"><input type="hidden" n
 					<thead>
 						<tr>
 							<th>Select</th>
-							<th>Title</th>
-							<th>Artist</th>
-							<th>Contributors</th>
-						</tr>
-					</thead>
-					<tbody>
+							<th>Title
 <?
-//Start title sort
+//start title sort
 if ($_POST[title] == "Ascending") {
 	echo '<input type="submit" value="Descending" name="title" class="title" form="Form1"/>';
 	$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title ASC;";
@@ -53,6 +48,14 @@ else {
 	echo '<input type="submit" value="Descending" name="title" class="title" form="Form1"/>';
 }
 //end title sort
+?>
+							</th>
+							<th>Artist</th>
+							<th>Contributors</th>
+						</tr>
+					</thead>
+					<tbody>
+<?
 $stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt->execute(array("%{$_POST['searchbox']}%"));
 while ($result = $stmt->fetch(pdo::FETCH_BOTH))
@@ -77,12 +80,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 					<thead>
 						<tr>
 							<th>Select</th>
-							<th>Artist</th>
-							<th>Title</th>
-							<th>Contributors</th>
-						</tr>
-					</thead>
-					<tbody>
+							<th>Artist
 <?
 //start artist sort
 if ($_POST[artist] == "Ascending") {
@@ -98,6 +96,14 @@ else {
 	echo '<input type="submit" value="Descending" name="artist" class="artist" form="Form1"/>';
 }
 //end artist sort
+?>
+							</th>
+							<th>Title</th>
+							<th>Contributors</th>
+						</tr>
+					</thead>
+					<tbody>
+<?
 $stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt->execute(array("%{$_POST['searchbox']}%"));
 while ($result = $stmt->fetch(pdo::FETCH_BOTH))
@@ -122,12 +128,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 					<thead>
 						<tr>
 							<th>Select</th>
-							<th>Contributor</th>
-							<th>Title</th>
-							<th>Artist</th>
-						</tr>
-					</thead>
-					<tbody>
+							<th>Contributor
 <?
 //start contributor sort
 if ($_POST[cont] == "Ascending") {
@@ -143,6 +144,14 @@ else {
 	echo '<input type="submit" value="Descending" name="cont" class="cont" form="Form1"/>';
 }
 //end contributor sort
+?>
+							</th>
+							<th>Title</th>
+							<th>Artist</th>
+						</tr>
+					</thead>
+					<tbody>
+<?
 $stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt->execute(array("%{$_POST['searchbox']}%"));
 while ($result = $stmt->fetch(pdo::FETCH_BOTH))
