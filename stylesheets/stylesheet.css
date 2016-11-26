@@ -31,6 +31,10 @@ table.result-table {
 	padding: 16px 0px 0px 0px;
 	text-align: left;
 }
+label.row-item {
+	display: block;
+	cursor: pointer;
+}
 .result-table tr.item:hover {
 	background-color: #eee;
 }

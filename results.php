@@ -63,12 +63,16 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 	$sql = "SELECT C.name, CC.type FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND F.fileID = ?;";
 	$stmt2 = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 	$stmt2->execute(array($result['fileID']));
-	echo "<tr class='item'><td><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></td><td>" . $result[title] . "</td><td>" . $result[artist] . "</td><td>";
+	echo "<tr class='item'>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result[title] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result[artist] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>";
 	while ($result2 = $stmt2->fetch(pdo::FETCH_BOTH))
 	{
 		echo $result2[name] . '(' . $result2[type] . ") ";
 	}
-	echo "</td></tr>";
+	echo "</label></td></tr>";
 }
 ?>
 					</tbody>
@@ -111,12 +115,16 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 	$sql = "SELECT C.name, CC.type FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND F.fileID = ?;";
 	$stmt2 = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 	$stmt2->execute(array($result['fileID']));
-	echo "<tr class='item'><td><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></td><td>" . $result[artist] . "</td><td>" . $result[title] . "</td><td>";
+	echo "<tr class='item'>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result[artist] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result[title] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>";
 	while ($result2 = $stmt2->fetch(pdo::FETCH_BOTH))
 	{
 		echo $result2[name] . '(' . $result2[type] . ") ";
 	}
-	echo "</td></tr>";
+	echo "</label></td></tr>";
 }
 ?>
 					</tbody>
@@ -160,7 +168,11 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 	$stmt2 = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 	$stmt2->execute(array($result['fileID']));
 	$result2 = $stmt2->fetch(pdo::FETCH_BOTH);
-	echo "<tr class='item'><td><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></td><td>" . $result[name] . '(' . $result[type] . ") </td><td>" . $result2[title] . "</td><td>" . $result2[artist] . "</td></tr>";
+	echo "<tr class='item'>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result[name] . '(' . $result[type] . ") </label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result2[title] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result2[artist] . "</label></td></tr>";
 }
 ?>
 					</tbody>
