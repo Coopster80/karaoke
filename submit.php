@@ -12,6 +12,7 @@
 		<?
 		if ($_POST[selected])
 		{
+			echo "<input type='hidden' name='file' value='" . $_POST[selected] . "'>";
 			if ($_POST[free])
 			{
 				echo "<h1>Free Queue Submission</h1>";
@@ -22,7 +23,8 @@
 			{
 				echo "<h1>Paid Queue Submission</h1>";
 				echo "<p>Name: <input type='text' name='name'></p>";
-				echo "<p>Credit Card Number:  <input type='text' name='ccNumber'></p>";
+				echo "<p>Credit Card Number:  <input type='number' name='ccNumber'></p>";
+				echo "<p>Amount:  <input type='text' name='amount'></p>";
 				echo "<input type='submit' name='paid' value='Submit'>";
 			}
 		}
