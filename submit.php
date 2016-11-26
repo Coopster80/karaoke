@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Karaoke Queue Submission</title>
+		<title>Queue Submission</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
@@ -21,10 +21,9 @@
 			else
 			{
 				echo "<h1>Paid Queue Submission</h1>";
-				echo "<p>Enter your name: <input type='text' name='name'></p>";
-				echo "<input type='submit' name='paid' value='Submit'>";
+				echo "<p>Name: <input type='text' name='name'></p>";
 				//Drop down menu with how much they are going to pay? Or just a text box with the amount....
-				echo "<p>Credit card number:  <input type='text' name='ccNumber'></p>";
+				echo "<p>Credit Card Number:  <input type='text' name='ccNumber'></p>";
 				echo "<input type='submit' name='paid' value='Submit'>";
 			}
 		}
