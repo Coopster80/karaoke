@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS Title;
 /* Create Tables*/
 CREATE TABLE User (
 	userID INT AUTO_INCREMENT PRIMARY KEY,
-	name varchar(100),
+	name varchar(100) NOT NULL,
 	ccNum int);
 CREATE TABLE Contributor (
 	contribID INT AUTO_INCREMENT PRIMARY KEY,
