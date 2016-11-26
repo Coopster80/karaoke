@@ -1,3 +1,13 @@
+<?
+include 'creds.php';
+try { // if something goes wrong, an exception is thrown
+	$dsn = "mysql:host=courses;dbname=z1766022";
+	$pdo = new PDO($dsn, $username, $password);
+}
+catch(PDOexception $e) { // handle that exception
+	echo "Connection to database failed: " . $e->getMessage();
+}
+?>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -9,7 +19,31 @@
 	</head>
 	<body>
 <?
-print_r($_POST);
+if ($_POST[paid])
+{
+	$sql = "SELECT * FROM User WHERE name = :name AND ccNum =  :ccNum;";
+	$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+	$stmt->execute(array(':name' => $_POST['name'], ':ccNum' => $_POST['ccNumber']));
+	$result = $stmt->fetch(pdo::FETCH_BOTH);
+	if ($result)
+	{
+		echo "User already in database";
+	}
+	else
+	{
+		$sql = "INSERT INTO User(name, ccNum) VALUES(:name, :ccNum);";
+		$stmt2 = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+		$stmt2->execute(array(':name' => $_POST['name'], ':ccNum' => $_POST['ccNumber']));
+		echo "User " . $_POST[name] . " has been added to the database with credit card number " . $_POST[ccNumber];
+	}
+}
+else
+{
+	$sql = "INSERT INTO User(name) VALUES(:name);";
+	$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+	$stmt->execute(array(':name' => $_POST['name']));
+	echo "User " . $_POST[name] . " has been added to the database.";
+}
 ?>
 	</body>
 </html>

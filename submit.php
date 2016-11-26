@@ -12,7 +12,7 @@
 		<?
 		if ($_POST[selected])
 		{
-			if ($_POST[free]) //Devin: Check the syntax on these statements I suck at them
+			if ($_POST[free])
 			{
 				echo "<h1>Free Queue Submission</h1>";
 				echo "<p>Enter your name:  <input type='text' name='name'></p>";
@@ -22,7 +22,6 @@
 			{
 				echo "<h1>Paid Queue Submission</h1>";
 				echo "<p>Name: <input type='text' name='name'></p>";
-				//Drop down menu with how much they are going to pay? Or just a text box with the amount....
 				echo "<p>Credit Card Number:  <input type='text' name='ccNumber'></p>";
 				echo "<input type='submit' name='paid' value='Submit'>";
 			}
