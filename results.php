@@ -171,8 +171,11 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 					</tbody>
 				</table>
 			</div>
-			<input type="submit" name="paid" value="Paid Queue" form="Form2">
-			<input type="submit" name="free" value="Free Queue" form="Form2">
+			<div class="buffer"></div>
+			<div class="bottom-bar">
+				<input type="submit" class="result-submit" name="paid" value="Paid Queue" form="Form2">
+				<input type="submit" class="result-submit" name="free" value="Free Queue" form="Form2">
+			</div>
 		</form>
 	</body>
 </html>

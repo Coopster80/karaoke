@@ -7,6 +7,9 @@ body {
 	font-family: Arial, sans-serif;
 	font-size: 16px;
 }
+div.buffer {
+	height: 100px;
+}
 div, table {
 	outline: none;
 }
@@ -23,6 +26,18 @@ div.results {
 	margin: 24px 72px 0;
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
 }
+div.bottom-bar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 20;
+	width: 100%;
+	height: 90px;
+	padding: 24px 0 0 0;
+	text-align: center;
+	background: white;
+	box-shadow: 0 0 8px rgba(0,0,0,.4);
+}
 table.result-table {
 	cursor: pointer;
 	border-spacing: 0;
@@ -35,6 +50,17 @@ label.row-item {
 	display: block;
 	cursor: pointer;
 }
+input[type=submit].result-submit {
+	width: 300px;
+	padding: 12px;
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: box-shadow 0.2s;
+}
+input[type=submit].result-submit:hover {
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+}
 input[type=submit].sort-button {
 	width: 100%;
 	text-align: left;
@@ -46,6 +72,25 @@ input[type=submit].sort-button {
 	border: none;
 	outline: none;
 	cursor: pointer;
+}
+input[type=search].searchbox {
+	outline: none;
+	border: none;
+	border-radius: 2px;
+	box-shadow: none;
+	font-size: 1.1rem;
+	background-color: #eee;
+	background-image: url(https://raw.githubusercontent.com/google/material-design-icons/master/action/1x_web/ic_search_black_24dp.png);
+	background-position: 8px 8px;
+	background-repeat: no-repeat;
+	padding: 10px 10px 10px 38px;
+	width: 100%;
+	transition: box-shadow 0.2s, background-color 0.2s;
+	transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+input[type=search].searchbox:focus {
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .result-table tr.item:hover {
 	background-color: #eee;
@@ -70,25 +115,6 @@ input[type=submit].sort-button {
 }
 .result-table td:first-child {
 	text-align: center;
-}
-input[type=search].searchbox {
-	outline: none;
-	border: none;
-	border-radius: 2px;
-	box-shadow: none;
-	font-size: 1.1rem;
-	background-color: #eee;
-	background-image: url(https://raw.githubusercontent.com/google/material-design-icons/master/action/1x_web/ic_search_black_24dp.png);
-	background-position: 8px 8px;
-	background-repeat: no-repeat;
-	padding: 10px 10px 10px 38px;
-	width: 100%;
-	transition: box-shadow 0.2s, background-color 0.2s;
-	transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
-}
-input[type=search].searchbox:focus {
-	background-color: white;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media screen and (max-width: 42em) {
 	div.results {
