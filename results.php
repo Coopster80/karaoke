@@ -31,17 +31,17 @@ echo '<form id="Form1" action="results.php" method="POST"><input type="hidden" n
 					<thead>
 						<tr>
 							<th>Select</th>
-							<th>Title
+							<th>
 <?
 //start title sort
-if ($_POST[title] == "Descending")
+if ($_POST[title] == "Title ↓")
 {
-	echo '<input type="submit" value="Ascending" name="title" class="title" form="Form1"/>';
+	echo '<input type="submit" class="sort-button" value="Title &uarr;" name="title" class="title" form="Form1"/>';
 	$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title DESC;";
 }
 else
 {
-	echo '<input type="submit" value="Descending" name="title" class="title" form="Form1"/>';
+	echo '<input type="submit" class="sort-button" value="Title &darr;" name="title" class="title" form="Form1"/>';
 	$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title ASC;";
 }
 //end title sort
@@ -81,17 +81,17 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 					<thead>
 						<tr>
 							<th>Select</th>
-							<th>Artist
+							<th>
 <?
 //start artist sort
-if ($_POST[artist] == "Descending")
+if ($_POST[artist] == "Artist ↓")
 {
-	echo '<input type="submit" value="Ascending" name="artist" class="artist" form="Form1"/>';
+	echo '<input type="submit" class="sort-button" value="Artist &uarr;" name="artist" class="artist" form="Form1"/>';
 	$sql =   "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY artist DESC;";
 }
 else
 {
-	echo '<input type="submit" value="Descending" name="artist" class="artist" form="Form1"/>';
+	echo '<input type="submit" class="sort-button" value="Artist &darr;" name="artist" class="artist" form="Form1"/>';
 	$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY artist ASC;";
 }
 //end artist sort
@@ -131,17 +131,17 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 					<thead>
 						<tr>
 							<th>Select</th>
-							<th>Contributor
+							<th>
 <?
 //start contributor sort
-if ($_POST[cont] == "Descending")
+if ($_POST[cont] == "Contributor ↓")
 {
-	echo '<input type="submit" value="Ascending" name="cont" class="cont" form="Form1"/>';
+	echo '<input type="submit" class="sort-button" value="Contributor &uarr;" name="cont" class="cont" form="Form1"/>';
 	$sql = "SELECT C.name, CC.type, F.fileID FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND C.name LIKE ? ORDER BY C.name DESC;";
 }
 else
 {
-	echo '<input type="submit" value="Descending" name="cont" class="cont" form="Form1"/>';
+	echo '<input type="submit" class="sort-button" value="Contributor &darr;" name="cont" class="cont" form="Form1"/>';
 	$sql =   "SELECT C.name, CC.type, F.fileID FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND C.name LIKE ? ORDER BY C.name ASC;";
 }
 //end contributor sort
