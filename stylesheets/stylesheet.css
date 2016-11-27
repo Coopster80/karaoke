@@ -120,4 +120,7 @@ input[type=search].searchbox:focus {
 	div.results {
 		margin: 24px 12px 0;
 	}
+	input[type=submit].result-submit {
+		width: 17rem;
+	}
 }
