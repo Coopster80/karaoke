@@ -67,5 +67,7 @@ else
 	echo "<br>Your song has been added to the free queue";
 }
 ?>
+	<br><a href="dj.php">DJ View</a>
+	<br><a href="search.php">Back to Search</a>
 	</body>
 </html>
