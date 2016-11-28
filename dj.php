@@ -49,17 +49,18 @@ if($_POST['freeSelect'])
         <th>Title</th>
         <th>Artist</th>
         <th>Name</th>
+        <th>FileID</th>
       </tr>
      </thead>
     <tbody>
     <?
     //Paid add
 
-          $sql = "SELECT P.paidAddID, T.text AS title, A.name as artist, U.name as user FROM Title T, File F, Artist A, User U, PaidAdd P WHERE F.fileID = P.fileID AND T.titleID = F.titleID AND A.artistID = F.artistID AND U.userID = P.userID AND P.played=0 ORDER BY P.amount DESC;";
+          $sql = "SELECT P.paidAddID, T.text AS title, A.name as artist, U.name as user, F.fileID FROM Title T, File F, Artist A, User U, PaidAdd P WHERE F.fileID = P.fileID AND T.titleID = F.titleID AND A.artistID = F.artistID AND U.userID = P.userID AND P.played=0 ORDER BY P.amount DESC;";
           $result = $pdo->query($sql);
           while ($re = $result->fetch(pdo::FETCH_BOTH))
           {
-            echo "<tr class='item'><td><input type='radio' name='paidSelect' value='" . $re[paidAddID] . "' id='" . $re[paidAddID] ."'></td><td>" . $re[title] . "</td><td>" . $re[artist] . "</td><td>" . $re[user] . "</td></tr>";
+            echo "<tr class='item'><td><input type='radio' name='paidSelect' value='" . $re[paidAddID] . "' id='" . $re[paidAddID] ."'></td><td>" . $re[title] . "</td><td>" . $re[artist] . "</td><td>" . $re[user] . "</td><td>" . $re[fileID] . "</td></tr>";
           }
           
     ?>
@@ -79,17 +80,18 @@ if($_POST['freeSelect'])
         <th>Title</th>
         <th>Artist</th>
         <th>Name</th>
+        <th>FileID</th>
       </tr>
      </thead>
     <tbody>
     <?
     //Free add
 
-          $sql = "SELECT FA.freeAddID, T.text AS title, A.name as artist, U.name as user FROM Title T, File F, Artist A, User U, FreeAdd FA WHERE F.fileID = FA.fileID AND T.titleID = F.titleID AND A.artistID = F.artistID AND U.userID = FA.userID AND FA.played=0;";
+          $sql = "SELECT FA.freeAddID, T.text AS title, A.name as artist, U.name as user, F.fileID FROM Title T, File F, Artist A, User U, FreeAdd FA WHERE F.fileID = FA.fileID AND T.titleID = F.titleID AND A.artistID = F.artistID AND U.userID = FA.userID AND FA.played=0;";
           $result = $pdo->query($sql);
           while ($re = $result->fetch(pdo::FETCH_BOTH))
           {
-            echo "<tr class='item'><td><input type='radio' name='freeSelect' value='" . $re[freeAddID] . "' id='" . $re[freeAddID] ."'></td><td>" . $re[title] . "</td><td>" . $re[artist] . "</td><td>" . $re[user] . "</td></tr>";
+            echo "<tr class='item'><td><input type='radio' name='freeSelect' value='" . $re[freeAddID] . "' id='" . $re[freeAddID] ."'></td><td>" . $re[title] . "</td><td>" . $re[artist] . "</td><td>" . $re[user] . "</td><td>" . $re[fileID] . "</td></tr>";
           }
          
     ?>
