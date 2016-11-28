@@ -91,12 +91,12 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 if ($_POST[artist] == "Artist ↓")
 {
 	echo '<input type="submit" class="sort-button" value="Artist &uarr;" name="artist" class="artist" form="Form1"/>';
-	$sql =   "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title DESC;";
+	$sql =   "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY artist DESC;";
 }
 else
 {
 	echo '<input type="submit" class="sort-button" value="Artist &darr;" name="artist" class="artist" form="Form1"/>';
-	$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title ASC;";
+	$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY artist ASC;";
 }
 //end artist sort
 ?>
