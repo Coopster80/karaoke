@@ -7,6 +7,13 @@ body {
 	font-family: Arial, sans-serif;
 	font-size: 16px;
 }
+body.red {
+	background-color: #E53935;
+}
+h1.table-header {
+	margin: 24px;
+	color: white;
+}
 div.buffer {
 	height: 100px;
 }
@@ -78,17 +85,18 @@ input[type=search].searchbox {
 	border-radius: 2px;
 	box-shadow: none;
 	font-size: 1.1rem;
-	background-color: #eee;
-	background-image: url(https://raw.githubusercontent.com/google/material-design-icons/master/action/1x_web/ic_search_black_24dp.png);
+	background-color: #EF5350;
+	background-image: url(https://raw.githubusercontent.com/google/material-design-icons/master/action/1x_web/ic_search_white_24dp.png);
 	background-position: 8px 8px;
 	background-repeat: no-repeat;
 	padding: 10px 10px 10px 38px;
 	width: 100%;
-	transition: box-shadow 0.2s, background-color 0.2s;
+	transition: box-shadow 0.2s, background-color 0.2s, background-image 0.2s;
 	transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 input[type=search].searchbox:focus {
 	background-color: white;
+	background-image: url(https://raw.githubusercontent.com/google/material-design-icons/master/action/1x_web/ic_search_black_24dp.png);
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .result-table tr.item:hover {

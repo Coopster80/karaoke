@@ -17,7 +17,7 @@ catch(PDOexception $e) { // handle that exception
 		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
 		<link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/av/2x_web/ic_queue_music_black_48dp.png" type="image/png">
 	</head>
-	<body>
+	<body class="red">
 <?
 if ( ! empty($_POST['searchbox'])) {
 	$results = $_POST['searchbox'];
@@ -25,7 +25,7 @@ if ( ! empty($_POST['searchbox'])) {
 echo '<form id="Form1" action="results.php" method="POST"><input type="hidden" name="searchbox" value='.$results.'></form>';
 ?>
 		<form id="Form2" method="post" action="submit.php">
-			<h1>Search By Title Results</h1>
+			<h1 class="table-header">Search By Title Results</h1>
 			<div class="card">
 				<table class="result-table">
 					<thead>
@@ -75,7 +75,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 					</tbody>
 				</table>
 			</div>
-			<h1>Search by Artist Results</h1>
+			<h1 class="table-header">Search by Artist Results</h1>
 			<div class="card">
 				<table class="result-table">
 					<thead>
@@ -125,7 +125,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 					</tbody>
 				</table>
 			</div>
-			<h1>Search by Contributor Results</h1>
+			<h1 class="table-header">Search by Contributor Results</h1>
 			<div class="card">
 				<table class="result-table">
 					<thead>
