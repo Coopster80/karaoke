@@ -27,7 +27,6 @@ CREATE TABLE Title (
 	text varchar(100));
 CREATE TABLE File (
 	fileID INT AUTO_INCREMENT PRIMARY KEY,
-	path varchar(100),
 	artistID INT,
 	titleID INT,
 	FOREIGN KEY (artistID) REFERENCES Artist(artistID),
