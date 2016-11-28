@@ -39,7 +39,7 @@ if($_POST['freeSelect'])
    <link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/av/2x_web/ic_queue_music_black_48dp.png" type="image/png">
  </head>
  <body>
-   <form id="DJ" method="post" action="dj.php">
+   <form id="DJ1" method="post" action="dj.php">
    <h1>Paid add list</h1>
    <div class="card">
    <table class="result-table">
@@ -66,7 +66,7 @@ if($_POST['freeSelect'])
     ?>
       </tbody>
      </table>
-               <input type="submit" value="clear">
+               <!-- <input type="submit" value="clear" form="DJ1"> -->
     </div>
    </form>
 
@@ -97,8 +97,13 @@ if($_POST['freeSelect'])
     ?>
      </tbody>
     </table>
-             <input type="submit" value="clear">
+             <!-- <input type="submit" value="clear" form="DJ2"> -->
    </div>
   </form>
+  <div class="buffer"></div>
+  <div class="bottom-bar">
+     <input type="submit" class="result-submit" value="Pclear" form="DJ1">
+     <input type="submit" class="result-submit" value="Fclear" form="DJ2">
+  </div>
  </body>
 </html>
