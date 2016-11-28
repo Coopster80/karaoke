@@ -26,7 +26,7 @@ catch(PDOexception $e) { // handle that exception
 if ( ! empty($_POST['searchbox'])) {
 	$results = $_POST['searchbox'];
 }
-echo '<form id="Form1" action="results.php" method="POST"><input type="hidden" name="searchbox" value='.$results.'></form>';
+echo '<form id="Form1" action="results.php" method="POST"><input type="hidden" name="searchbox" value="'.$results.'"></form>';
 ?>
 		<form id="Form2" method="post" action="submit.php">
 			<h1 class="table-header">Search by Title</h1>
