@@ -16,6 +16,7 @@
 5. Implement the web application using PHP
 
 ### Links
+- ER Diagram: https://goo.gl/photos/5wzQw4Ah5M4w9zxf9
 - Edward's Project Link: http://students.cs.niu.edu/~z1701294/Karaoke%20Project/search.php
 - Brandon's Project Link:  http://students.cs.niu.edu/~z1737028/karaoke/search.php
 - Nolan's Project Link: http://students.cs.niu.edu/~z1766022/karaoke/search.php
