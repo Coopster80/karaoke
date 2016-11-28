@@ -20,7 +20,7 @@ catch(PDOexception $e) { // handle that exception
  <body>
    <form id="DJ" method="post" action="dj.php">
    <h1>Result list</h1>
-   <div class="results">
+   <div class="card">
    <table class="result-table">
     <thead>
      <tr>

@@ -26,7 +26,7 @@ echo '<form id="Form1" action="results.php" method="POST"><input type="hidden" n
 ?>
 		<form id="Form2" method="post" action="submit.php">
 			<h1>Search By Title Results</h1>
-			<div class="results">
+			<div class="card">
 				<table class="result-table">
 					<thead>
 						<tr>
@@ -76,7 +76,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 				</table>
 			</div>
 			<h1>Search by Artist Results</h1>
-			<div class="results">
+			<div class="card">
 				<table class="result-table">
 					<thead>
 						<tr>
@@ -126,7 +126,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 				</table>
 			</div>
 			<h1>Search by Contributor Results</h1>
-			<div class="results">
+			<div class="card">
 				<table class="result-table">
 					<thead>
 						<tr>

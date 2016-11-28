@@ -13,14 +13,13 @@ div.buffer {
 div, table {
 	outline: none;
 }
-div.search{
+div.search {
 	max-width: 64rem;
 	padding: 2rem 6rem;
 	margin: 0 auto;
 	text-align: center;
 }
-div.results {
-	position: relative;
+div.card {
 	background-color: white;
 	border-radius: 2px;
 	margin: 24px 72px 0;
@@ -117,10 +116,10 @@ input[type=search].searchbox:focus {
 	text-align: center;
 }
 @media screen and (max-width: 42em) {
-	div.results {
+	div.card {
 		margin: 24px 12px 0;
 	}
 	input[type=submit].result-submit {
-		width: 17rem;
+		width: 15rem;
 	}
 }

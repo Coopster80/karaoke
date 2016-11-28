@@ -30,7 +30,7 @@
 		}
 		else
 		{
-			echo "Please select a song";
+			echo "<h1>Please select a song</h1>";
 			echo "<br><a href='search.php'>Back to Search</a>";
 		}
 		?>
