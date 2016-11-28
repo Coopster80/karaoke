@@ -11,7 +11,7 @@ body.red {
 	background-color: #E53935;
 }
 h1.table-header {
-	margin: 24px;
+	margin-left: 72px;
 	color: white;
 }
 div.buffer {
@@ -59,6 +59,7 @@ label.row-item {
 input[type=submit].result-submit {
 	width: 300px;
 	padding: 12px;
+	background-color: #EF5350;
 	border: none;
 	border-radius: 2px;
 	cursor: pointer;

@@ -25,7 +25,7 @@ if ( ! empty($_POST['searchbox'])) {
 echo '<form id="Form1" action="results.php" method="POST"><input type="hidden" name="searchbox" value='.$results.'></form>';
 ?>
 		<form id="Form2" method="post" action="submit.php">
-			<h1 class="table-header">Search By Title Results</h1>
+			<h1 class="table-header">Search By Title</h1>
 			<div class="card">
 				<table class="result-table">
 					<thead>
@@ -75,7 +75,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 					</tbody>
 				</table>
 			</div>
-			<h1 class="table-header">Search by Artist Results</h1>
+			<h1 class="table-header">Search by Artist</h1>
 			<div class="card">
 				<table class="result-table">
 					<thead>
@@ -125,7 +125,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 					</tbody>
 				</table>
 			</div>
-			<h1 class="table-header">Search by Contributor Results</h1>
+			<h1 class="table-header">Search by Contributor</h1>
 			<div class="card">
 				<table class="result-table">
 					<thead>
