@@ -10,27 +10,50 @@ body {
 body.red {
 	background-color: #E53935;
 }
+body.grey {
+	background-color: #e8e8e8;
+}
 h1.table-header {
-	margin-left: 72px;
+	margin: 24px 72px 12px;
+	font-weight: normal;
+}
+h1.main-title {
+	font-size: 6rem;
+	margin: 200px 0 64px;
 	color: white;
 }
-div.buffer {
+h1.banner-title {
+	color: white;
+	margin: 14px;
+}
+div.bottom-buffer {
 	height: 100px;
+}
+div.top-buffer {
+	height: 64px;
 }
 div, table {
 	outline: none;
 }
 div.search {
-	max-width: 64rem;
-	padding: 2rem 6rem;
+	width: 50%;
 	margin: 0 auto;
 	text-align: center;
 }
 div.card {
 	background-color: white;
 	border-radius: 2px;
-	margin: 24px 72px 0;
-	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+	margin: 0 72px 0;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.37);
+}
+div.banner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 64px;
+	background-color: #E53935;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 }
 div.bottom-bar {
 	position: fixed;
@@ -59,7 +82,8 @@ label.row-item {
 input[type=submit].result-submit {
 	width: 300px;
 	padding: 12px;
-	background-color: #EF5350;
+	background-color: #E53935;
+	color: white;
 	border: none;
 	border-radius: 2px;
 	cursor: pointer;
@@ -107,6 +131,9 @@ input[type=search].searchbox:focus {
 	height: 36px;
 	text-transform: uppercase;
 	padding: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .result-table td {
 	height: 64px;
@@ -126,9 +153,19 @@ input[type=search].searchbox:focus {
 }
 @media screen and (max-width: 42em) {
 	div.card {
-		margin: 24px 12px 0;
+		margin: 0 12px 0;
+	}
+	div.search {
+		width: 90%;
+	}
+	h1.table-header {
+		margin: 24px 12px 12px;
 	}
 	input[type=submit].result-submit {
-		width: 15rem;
+		width: 45%;
+	}
+	h1.main-title {
+		font-size: 4rem;
+		margin: 100px 0 64px;
 	}
 }

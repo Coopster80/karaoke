@@ -18,6 +18,7 @@ catch(PDOexception $e) { // handle that exception
 		<link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/av/2x_web/ic_queue_music_black_48dp.png" type="image/png">
 	</head>
 	<body>
+		<h1>Submission Complete</h1>
 <?
 if ($_POST[paid])
 {
@@ -27,7 +28,6 @@ if ($_POST[paid])
 	$result = $stmt->fetch(pdo::FETCH_BOTH);
 	if ($result)
 	{
-		echo "User already in database";
 		$uid = $result[userID];
 	}
 	else
@@ -35,14 +35,13 @@ if ($_POST[paid])
 		$sql = "INSERT INTO User(name, ccNum) VALUES(:name, :ccNum);";
 		$stmt2 = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 		$stmt2->execute(array(':name' => $_POST['name'], ':ccNum' => $_POST['ccNumber']));
-		echo "User " . $_POST[name] . " has been added to the database with credit card number " . $_POST[ccNumber];
 		$uid= $pdo->lastInsertId();
 	}
 	$time = date('H:i:s', time());
 	$sql = "INSERT INTO PaidAdd(userID, fileID, time, amount, played) VALUES(:userID, :fileID, :time, :amount, false);";
 	$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 	$stmt->execute(array(':userID' => $uid, ':fileID' => $_POST['file'], ':time' => $time, ':amount' => $_POST['amount']));
-	echo "<br>Song " . $_POST['file'] . " has been added to the paid queue by user " . $uid . " at " . $time . " for " . $_POST[amount] . " dollars.";
+	echo "<br>Your song has been added to the paid queue";
 }
 else
 {
@@ -52,7 +51,6 @@ else
 	$result = $stmt->fetch(pdo::FETCH_BOTH);
 	if ($result)
 	{
-		echo "User already in database";
 		$uid = $result[userID];
 	}
 	else
@@ -60,14 +58,13 @@ else
 		$sql = "INSERT INTO User(name) VALUES(:name);";
 		$stmt2 = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 		$stmt2->execute(array(':name' => $_POST['name']));
-		echo "User " . $_POST[name] . " has been added to the database";
 		$uid= $pdo->lastInsertId();
 	}
 	$time = date('H:i:s', time());
 	$sql = "INSERT INTO FreeAdd(userID, fileID, time, played) VALUES(:userID, :fileID, :time, false);";
 	$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 	$stmt->execute(array(':userID' => $uid, ':fileID' => $_POST['file'], ':time' => $time));
-	echo "<br>Song " . $_POST['file'] . " has been added to the free queue by user " . $uid . " at " . $time;
+	echo "<br>Your song has been added to the free queue";
 }
 ?>
 	</body>

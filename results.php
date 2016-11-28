@@ -17,7 +17,11 @@ catch(PDOexception $e) { // handle that exception
 		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
 		<link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/av/2x_web/ic_queue_music_black_48dp.png" type="image/png">
 	</head>
-	<body class="red">
+	<body class="grey">
+		<div class="top-buffer"></div>
+		<div class="banner">
+			<h1 class="banner-title">Search Results</h1>
+		</div>
 <?
 if ( ! empty($_POST['searchbox'])) {
 	$results = $_POST['searchbox'];
@@ -25,7 +29,7 @@ if ( ! empty($_POST['searchbox'])) {
 echo '<form id="Form1" action="results.php" method="POST"><input type="hidden" name="searchbox" value='.$results.'></form>';
 ?>
 		<form id="Form2" method="post" action="submit.php">
-			<h1 class="table-header">Search By Title</h1>
+			<h1 class="table-header">Search by Title</h1>
 			<div class="card">
 				<table class="result-table">
 					<thead>
@@ -171,7 +175,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 					</tbody>
 				</table>
 			</div>
-			<div class="buffer"></div>
+			<div class="bottom-buffer"></div>
 			<div class="bottom-bar">
 				<input type="submit" class="result-submit" name="paid" value="Paid Queue" form="Form2">
 				<input type="submit" class="result-submit" name="free" value="Free Queue" form="Form2">
