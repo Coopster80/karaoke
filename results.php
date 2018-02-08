@@ -1,4 +1,4 @@
-<?
+<?php
 include 'creds.php';
 try { // if something goes wrong, an exception is thrown
 	$dsn = "mysql:host=courses;dbname=z1766022";
@@ -22,7 +22,7 @@ catch(PDOexception $e) { // handle that exception
 		<div class="banner">
 			<h1 class="banner-title">Search Results</h1>
 		</div>
-<?
+<?php
 if ( ! empty($_POST['searchbox'])) {
 	$results = $_POST['searchbox'];
 }
@@ -36,7 +36,7 @@ echo '<form id="Form1" action="results.php" method="POST"><input type="hidden" n
 						<tr>
 							<th>Select</th>
 							<th>
-<?
+<?php
 //start title sort
 if ($_POST[title] == "Title ↓")
 {
@@ -56,7 +56,7 @@ else
 						</tr>
 					</thead>
 					<tbody>
-<?
+<?php
 $stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt->execute(array("%{$_POST['searchbox']}%"));
 while ($result = $stmt->fetch(pdo::FETCH_BOTH))
@@ -86,7 +86,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 						<tr>
 							<th>Select</th>
 							<th>
-<?
+<?php
 //start artist sort
 if ($_POST[artist] == "Artist ↓")
 {
@@ -106,7 +106,7 @@ else
 						</tr>
 					</thead>
 					<tbody>
-<?
+<?php
 $stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt->execute(array("%{$_POST['searchbox']}%"));
 while ($result = $stmt->fetch(pdo::FETCH_BOTH))
@@ -136,7 +136,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 						<tr>
 							<th>Select</th>
 							<th>
-<?
+<?php
 //start contributor sort
 if ($_POST[cont] == "Contributor ↓")
 {
@@ -156,7 +156,7 @@ else
 						</tr>
 					</thead>
 					<tbody>
-<?
+<?php
 $stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt->execute(array("%{$_POST['searchbox']}%"));
 while ($result = $stmt->fetch(pdo::FETCH_BOTH))

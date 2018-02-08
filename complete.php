@@ -1,4 +1,4 @@
-<?
+<?php
 include 'creds.php';
 try { // if something goes wrong, an exception is thrown
 	$dsn = "mysql:host=courses;dbname=z1766022";
@@ -19,7 +19,7 @@ catch(PDOexception $e) { // handle that exception
 	</head>
 	<body>
 		<h1>Submission Complete</h1>
-<?
+<?php
 if ($_POST[paid])
 {
 	$sql = "SELECT * FROM User WHERE name = :name AND ccNum =  :ccNum;";

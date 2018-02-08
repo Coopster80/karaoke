@@ -1,4 +1,4 @@
-<?
+<?php
 include 'creds.php';
 try { // if something goes wrong, an exception is thrown
 	$dsn = "mysql:host=courses;dbname=z1766022";
@@ -46,7 +46,7 @@ if($_POST['freeSelect'])
 						</tr>
 					</thead>
 					<tbody>
-<?
+<?php
 //Paid add
 $sql = "SELECT P.paidAddID, T.text AS title, A.name as artist, U.name as user, F.fileID FROM Title T, File F, Artist A, User U, PaidAdd P WHERE F.fileID = P.fileID AND T.titleID = F.titleID AND A.artistID = F.artistID AND U.userID = P.userID AND P.played=0 ORDER BY P.amount DESC;";
 $result = $pdo->query($sql);
@@ -78,7 +78,7 @@ while ($re = $result->fetch(pdo::FETCH_BOTH))
 						</tr>
 					</thead>
 					<tbody>
-<?
+<?php
 //Free add
 $sql = "SELECT FA.freeAddID, T.text AS title, A.name as artist, U.name as user, F.fileID FROM Title T, File F, Artist A, User U, FreeAdd FA WHERE F.fileID = FA.fileID AND T.titleID = F.titleID AND A.artistID = F.artistID AND U.userID = FA.userID AND FA.played=0;";
 $result = $pdo->query($sql);

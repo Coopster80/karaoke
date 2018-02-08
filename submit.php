@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<form method="post" action="complete.php">
-		<?
+		<?php
 		if ($_POST[selected])
 		{
 			echo "<input type='hidden' name='file' value='" . $_POST[selected] . "'>";

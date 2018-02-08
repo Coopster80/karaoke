@@ -1,4 +1,4 @@
-<?
+<?php
 include 'creds.php';
 try { // if something goes wrong, an exception is thrown
 	$dsn = "mysql:host=courses;dbname=z1766022";
