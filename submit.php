@@ -10,10 +10,10 @@
 	<body>
 		<form method="post" action="complete.php">
 		<?php
-		if ($_POST[selected])
+		if ($_POST['selected'])
 		{
-			echo "<input type='hidden' name='file' value='" . $_POST[selected] . "'>";
-			if ($_POST[free])
+			echo "<input type='hidden' name='file' value='" . $_POST['selected'] . "'>";
+			if ((isset($_POST['free']) ? $_POST['free'] : null))
 			{
 				echo "<div class='top-buffer'></div>";
 				echo "<div class='banner'>";

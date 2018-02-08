@@ -20,7 +20,7 @@ catch(PDOexception $e) { // handle that exception
 	<body>
 		<h1>Submission Complete</h1>
 <?php
-if ($_POST[paid])
+if ((isset($_POST['paid']) ? $_POST['paid'] : null))
 {
 	$sql = "SELECT * FROM User WHERE name = :name AND ccNum =  :ccNum;";
 	$stmt = $pdo->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
@@ -51,7 +51,7 @@ else
 	$result = $stmt->fetch(pdo::FETCH_BOTH);
 	if ($result)
 	{
-		$uid = $result[userID];
+		$uid = $result['userID'];
 	}
 	else
 	{

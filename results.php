@@ -38,7 +38,7 @@ echo '<form id="Form1" action="results.php" method="POST"><input type="hidden" n
 							<th>
 <?php
 //start title sort
-if ($_POST[title] == "Title ↓")
+if ((isset($_POST['title']) ? $_POST['title'] : null) == "Title ↓")
 {
 	echo '<input type="submit" class="sort-button" value="Title &uarr;" name="title" class="title" form="Form1"/>';
 	$sql =  "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE T.text LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY title DESC;";
@@ -66,12 +66,12 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 	$stmt2->execute(array($result['fileID']));
 	echo "<tr class='item'>";
 	echo "<td><label class='row-item' for='" . $result['fileID'] . "'><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></label></td>";
-	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result[title] . "</label></td>";
-	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result[artist] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result['title'] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result['artist'] . "</label></td>";
 	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>";
 	while ($result2 = $stmt2->fetch(pdo::FETCH_BOTH))
 	{
-		echo $result2[name] . '(' . $result2[type] . ") ";
+		echo $result2['name'] . '(' . $result2['type'] . ") ";
 	}
 	echo "</label></td></tr>";
 }
@@ -88,7 +88,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 							<th>
 <?php
 //start artist sort
-if ($_POST[artist] == "Artist ↓")
+if ((isset($_POST['artist']) ? $_POST['artist'] : null) == "Artist ↓")
 {
 	echo '<input type="submit" class="sort-button" value="Artist &uarr;" name="artist" class="artist" form="Form1"/>';
 	$sql =   "SELECT T.text AS title, A.name AS artist, F.fileID FROM Artist A, Title T, File F WHERE A.name LIKE ? AND F.titleID = T.titleID AND F.artistID = A.artistID ORDER BY artist DESC;";
@@ -116,12 +116,12 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 	$stmt2->execute(array($result['fileID']));
 	echo "<tr class='item'>";
 	echo "<td><label class='row-item' for='" . $result['fileID'] . "'><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></label></td>";
-	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result[artist] . "</label></td>";
-	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result[title] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result['artist'] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result['title'] . "</label></td>";
 	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>";
 	while ($result2 = $stmt2->fetch(pdo::FETCH_BOTH))
 	{
-		echo $result2[name] . '(' . $result2[type] . ") ";
+		echo $result2['name'] . '(' . $result2['type'] . ") ";
 	}
 	echo "</label></td></tr>";
 }
@@ -138,7 +138,7 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 							<th>
 <?php
 //start contributor sort
-if ($_POST[cont] == "Contributor ↓")
+if ((isset($_POST['cont']) ? $_POST['cont'] : null) == "Contributor ↓")
 {
 	echo '<input type="submit" class="sort-button" value="Contributor &uarr;" name="cont" class="cont" form="Form1"/>';
 	$sql = "SELECT C.name, CC.type, F.fileID FROM Contributes CC, File F, Contributor C WHERE CC.fileID = F.fileID AND CC.contribID = C.contribID AND C.name LIKE ? ORDER BY C.name DESC;";
@@ -167,9 +167,9 @@ while ($result = $stmt->fetch(pdo::FETCH_BOTH))
 	$result2 = $stmt2->fetch(pdo::FETCH_BOTH);
 	echo "<tr class='item'>";
 	echo "<td><label class='row-item' for='" . $result['fileID'] . "'><input type='radio' name='selected' value='" . $result['fileID'] . "' id='" . $result['fileID'] . "'></label></td>";
-	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result[name] . '(' . $result[type] . ") </label></td>";
-	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result2[title] . "</label></td>";
-	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result2[artist] . "</label></td></tr>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result['name'] . '(' . $result['type'] . ") </label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result2['title'] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $result['fileID'] . "'>" . $result2['artist'] . "</label></td></tr>";
 }
 ?>
 					</tbody>

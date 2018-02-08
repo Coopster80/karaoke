@@ -7,12 +7,12 @@ try { // if something goes wrong, an exception is thrown
 catch(PDOexception $e) { // handle that exception
 	echo "Connection to database failed: " . $e->getMessage();
 }
-if($_POST['paidSelect'])
+if((isset($_POST['paidSelect']) ? $_POST['paidSelect'] : null))
 {
 	$sql = "UPDATE PaidAdd SET played=1 WHERE paidAddID =" . $_POST['paidSelect'] . ";";
 	$result = $pdo->exec($sql);
 }
-if($_POST['freeSelect'])
+if((isset($_POST['freeSelect']) ? $_POST['freeSelect'] : null))
 {
 	$sql = "UPDATE FreeAdd SET played=1 WHERE freeAddID =" . $_POST['freeSelect'] . ";";
 	$result = $pdo->exec($sql);
@@ -53,11 +53,11 @@ $result = $pdo->query($sql);
 while ($re = $result->fetch(pdo::FETCH_BOTH))
 {
 	echo "<tr class='item'>";
-	echo "<td><label class='row-item' for='" . $re['paidAddID'] . "'><input type='radio' name='paidSelect' value='" . $re[paidAddID] . "' id='" . $re[paidAddID] ."'></label></td>";
-	echo "<td><label class='row-item' for='" . $re['paidAddID'] . "'>" . $re[title] . "</label></td>";
-	echo "<td><label class='row-item' for='" . $re['paidAddID'] . "'>" . $re[artist] . "</label></td>";
-	echo "<td><label class='row-item' for='" . $re['paidAddID'] . "'>" . $re[user] . "</label></td>";
-	echo "<td>" . $re[fileID] . "</td></tr>";
+	echo "<td><label class='row-item' for='" . $re['paidAddID'] . "'><input type='radio' name='paidSelect' value='" . $re['paidAddID'] . "' id='" . $re['paidAddID'] ."'></label></td>";
+	echo "<td><label class='row-item' for='" . $re['paidAddID'] . "'>" . $re['title'] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $re['paidAddID'] . "'>" . $re['artist'] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $re['paidAddID'] . "'>" . $re['user'] . "</label></td>";
+	echo "<td>" . $re['fileID'] . "</td></tr>";
 }
 ?>
 					</tbody>
@@ -85,11 +85,11 @@ $result = $pdo->query($sql);
 while ($re = $result->fetch(pdo::FETCH_BOTH))
 {
 	echo "<tr class='item'>";
-	echo "<td><label class='row-item' for='" . $re['freeAddID'] . "'><input type='radio' name='freeSelect' value='" . $re[freeAddID] . "' id='" . $re[freeAddID] ."'></label></td>";
-	echo "<td><label class='row-item' for='" . $re['freeAddID'] . "'>" . $re[title] . "</label></td>";
-	echo "<td><label class='row-item' for='" . $re['freeAddID'] . "'>" . $re[artist] . "</label></td>";
-	echo "<td><label class='row-item' for='" . $re['freeAddID'] . "'>" . $re[user] . "</label></td>";
-	echo "<td><label class='row-item' for='" . $re['freeAddID'] . "'>" . $re[fileID] . "</label></td></tr>";
+	echo "<td><label class='row-item' for='" . $re['freeAddID'] . "'><input type='radio' name='freeSelect' value='" . $re['freeAddID'] . "' id='" . $re['freeAddID'] ."'></label></td>";
+	echo "<td><label class='row-item' for='" . $re['freeAddID'] . "'>" . $re['title'] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $re['freeAddID'] . "'>" . $re['artist'] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $re['freeAddID'] . "'>" . $re['user'] . "</label></td>";
+	echo "<td><label class='row-item' for='" . $re['freeAddID'] . "'>" . $re['fileID'] . "</label></td></tr>";
 }
 ?>
 					</tbody>
